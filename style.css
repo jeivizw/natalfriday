@@ -1,0 +1,329 @@
+/*
+  Folha de estilos principal do projeto.
+  Objetivo: aparência clara e moderna, com destaque para o tema verde.
+  Comentários didáticos explicam o papel de cada bloco.
+*/
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: #b42626;
+  color: #ffffff;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#particles-canvas {
+  /* Canvas fixo no fundo para animação de partículas */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-section {
+  /* Seção hero: título grande, subtítulo e contador */
+  position: relative;
+  min-height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  overflow: hidden;
+}
+
+.hero-content {
+  /* Conteúdo central, acima do canvas (z-index) */
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+}
+
+.main-title {
+  /* Título principal com efeito de brilho e pulsação */
+  font-size: 72px;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+  letter-spacing: 8px;
+  text-shadow: 0 0 20px rgba(231, 8, 8, 0.8);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.subtitle {
+  /* Subtítulo abaixo do H1 */
+  font-size: 28px;
+  margin: 0 0 40px 0;
+  opacity: 0.9;
+}
+
+.countdown-container {
+  /* Contêiner dos números do contador */
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.countdown-item {
+  /* Cartões do contador, com fundo translúcido e borda verde */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid #f1c40f;
+  border-radius: 12px;
+  padding: 20px 30px;
+  min-width: 120px;
+  box-shadow: 0 8px 32px rgba(228, 5, 5, 0.3);
+}
+
+.countdown-number {
+  /* Número grande do contador */
+  font-size: 48px;
+  font-weight: bold;
+  color: #f1c40f;
+  display: block;
+  line-height: 1;
+}
+
+.countdown-label {
+  /* Rótulo abaixo do número (Dias, Horas...) */
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 8px;
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+
+.products-section {
+  /* Seção dos produtos; z-index 2 para ficar acima do canvas */
+  position: relative;
+  z-index: 2;
+  padding: 60px 20px;
+  background: transparent;
+}
+
+.products-title {
+  /* Título da seção de produtos */
+  text-align: center;
+  font-size: 42px;
+  font-weight: bold;
+  margin: 0 0 50px 0;
+  color: #27ae60;
+}
+
+.products-grid {
+  /* Grade responsiva que se adapta ao tamanho da tela */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  /* Cartão de produto com hover animado */
+  background: #1a1a1a;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.4);
+  border-color: #ffffff;
+}
+
+.product-image {
+  /* Área da imagem do produto: usamos emoji centralizado */
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  position: relative;
+}
+
+.discount-badge {
+  /* Selo de desconto no canto superior direito */
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #fcfcfc;
+  color: #f1c40f;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.5)
+}
+
+.product-info {
+  /* Conteúdo textual do produto */
+  padding: 25px;
+}
+
+.product-name {
+  /* Nome do produto */
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 0 15px 0;
+  color: #ffffff;
+}
+
+.price-container {
+  /* Linha com preço antigo e novo */
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.old-price {
+  /* Preço antigo riscado, com menos destaque */
+  font-size: 18px;
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.new-price {
+  /* Preço novo em destaque (verde) */
+  font-size: 32px;
+  font-weight: bold;
+  color: #f1c40f;
+}
+
+.buy-button {
+  /* Botão de compra ocupando toda a largura */
+  width: 100%;
+  padding: 15px;
+  background: #e70808;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.buy-button:hover {
+  /* Efeito visual ao passar o mouse no botão */
+  background: #e70505;
+  transform: translateY(-2px);
+}
+
+/* Responsividade simples: ajusta espaçamentos em telas menores */
+  /* Responsividade simples: ajusta espaçamentos em telas menores */
+@media (max-width: 768px) {
+  .main-title { font-size: 48px; letter-spacing: 4px; }
+  .subtitle { font-size: 22px; }
+  .product-image { height: 200px; font-size: 64px; }
+}
+
+@media (max-width: 480px) {
+  .main-title { font-size: 38px; letter-spacing: 2px; }
+  .subtitle { font-size: 18px; }
+  .products-grid { gap: 20px; }
+}
+
+.buy-button:hover {
+  background: #ee0202;
+  transform: scale(1.05);
+}
+
+.buy-button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 48px;
+    letter-spacing: 4px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+
+  .countdown-item {
+    min-width: 90px;
+    padding: 15px 20px;
+  }
+
+  .countdown-number {
+    font-size: 36px;
+  }
+  .countdown-label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-title { font-size: 48px; letter-spacing: 4px; }
+  .subtitle { font-size: 22px; }
+  .product-image { height: 200px; font-size: 64px; }
+}
+
+@media (max-width: 480px) {
+  .main-title { font-size: 38px; letter-spacing: 2px; }
+  .subtitle { font-size: 18px; }
+  .products-grid { gap: 20px; }
+}
+
+.buy-button:hover {
+  background: #fd0707;
+  transform: scale(1.05);
+}
+
+.buy-button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 48px;
+    letter-spacing: 4px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+
+  .countdown-item {
+    min-width: 90px;
+    padding: 15px 20px;
+  }
+
+  .countdown-number {
+    font-size: 36px;
+  }
+  .countdown-label {
+    font-size: 12px;
+  }
+}
