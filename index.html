@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back Friday</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+  <canvas id="particles-canvas"></canvas>
+    <main>
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1 class="main-title" id="main-title">Especial de Natal Mágico!🎀</h1>
+          <p class="subtitle" id="subtitle">Descontos de até 70%</p>
+          <div class="countdown-container">
+            <div class="countdown-item">
+              <span class="countdown-number" id="days">00</span>
+              <span class="countdown-label">Dias</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="hours">00</span>
+              <span class="countdown-label">Horas</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="minutes">00</span>
+              <span class="countdown-label">Minutos</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="seconds">00</span>
+              <span class="countdown-label">Segundos</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="products-section">
+        <!-- Título e grade de produtos. O JS insere cartões de produto aqui. -->
+        <h2 class="products-title">Ofertas Imperdíveis</h2>
+        <div class="products-grid"></div>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+    window.__SUPABASE = window.__SUPABASE || {
+        url: window.SUPABASE_URL || 'https://febielulxrzdoielsosk.supabase.co',
+        anonKey: window.SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZlYmllbHVseHJ6ZG9pZWxzb3NrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM0NjI5OTQsImV4cCI6MjA3OTAzODk5NH0.hIK1qBO1h8QvWjaXfkEkYDAnoUh9flC83cMPKFEYLh4'
+      };
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
